@@ -4,6 +4,7 @@
 More information can be found here: https://github.com/plexinc/pms-docker
 
 # This fork adds the possibility to mount a rclone mount to plex directly
+It is recommended that fuse is installed on docker host.
 Run example:
 ```
 docker run \
