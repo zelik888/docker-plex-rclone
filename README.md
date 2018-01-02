@@ -3,7 +3,7 @@
 ## Information:
 Readme can be found here: https://github.com/plexinc/pms-docker
 
-## This docker fork adds the possibility to mount /media directly to a rclone mount (fuse must be installed on docker host)
+## This fork adds the possibility to mount a rclone mount to plex directly
 Run example:
 ```
 docker run \
@@ -11,6 +11,7 @@ docker run \
 --name plex \
 --network=host \
 --cap-add SYS_ADMIN \
+--privileged \
 --device /dev/fuse \
 -e TZ="<timezone>" \
 -e PLEX_CLAIM="<claimToken>" \
@@ -26,5 +27,5 @@ docker run \
 -p 32412:32412/udp \
 -p 32413:32413/udp \
 -p 32414:32414/udp \
-robostlund/docker-plex-rclone
+robostlund/plex-rclone:latest
 ```
