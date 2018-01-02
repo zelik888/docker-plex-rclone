@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+
+echo "Starting rclone."
+
+if [ ! -d "/media" ]; then
+  /bin/mkdir -p "/media"
+  chown plex:plex "/media"
+else
+  chown plex:plex "/media"
+fi
+
+exec s6-setuidgid plex /bin/sh -c '/usr/sbin/rclone --config /config/rclone.conf mount --allow-non-empty --poll-interval 1m --dir-cache-time 10m --acd-templink-threshold 0 --read-only '${RCLONE_CONFIG_MOUNT}' /media'
