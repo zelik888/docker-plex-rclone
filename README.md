@@ -1,7 +1,7 @@
 # Forked from: https://github.com/plexinc/pms-docker
 
 ## Information:
-Readme can be found here: https://github.com/plexinc/pms-docker
+More information can be found here: https://github.com/plexinc/pms-docker
 
 ## This fork adds the possibility to mount a rclone mount to plex directly
 Run example:
