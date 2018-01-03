@@ -48,6 +48,8 @@ RUN \
       /transcode \
       /data \
     && \
+# Allow others to fuse
+  sed -i 's/#user_allow_other/user_allow_other/' /etc/fuse.conf && \
 
 # Cleanup
     apt-get -y autoremove && \
