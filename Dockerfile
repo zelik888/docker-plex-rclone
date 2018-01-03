@@ -28,8 +28,6 @@ RUN \
 # Fetch and extract rclone
     wget https://github.com/ncw/rclone/releases/download/v${RCLONE_VERSION}/rclone-v${RCLONE_VERSION}-linux-amd64.zip -O /tmp/rclone-v${RCLONE_VERSION}-linux-amd64.zip && \
     unzip /tmp/rclone-v${RCLONE_VERSION}-linux-amd64.zip -d /tmp/ && \
-    ls -l /tmp/ && \
-    ls -l /tmp/rclone-v${RCLONE_VERSION}-linux-amd64 && \
     mv /tmp/rclone-v${RCLONE_VERSION}-linux-amd64/rclone /usr/sbin/rclone && \
     chmod 755 /usr/sbin/rclone && \
     chown root:root /usr/sbin/rclone && \
@@ -37,7 +35,7 @@ RUN \
     rm -f /tmp/rclone-v${RCLONE_VERSION}-linux-amd64.zip && \
 
 # Add user and groups
-    groupadd fuse -g 106 && \
+    groupadd fuse -g 107 && \
     useradd -U -d /config -s /bin/false plex && \
     usermod -G users plex && \
     usermod -aG fuse plex && \
