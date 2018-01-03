@@ -40,7 +40,7 @@ RUN \
     groupadd fuse && \
     useradd -U -d /config -s /bin/false plex && \
     usermod -G users plex && \
-    usermod -G fuse plex && \
+    usermod -aG fuse plex && \
 
 # Setup directories
     mkdir -p \
