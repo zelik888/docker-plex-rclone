@@ -5,6 +5,7 @@ More information can be found here: https://github.com/plexinc/pms-docker
 
 # This fork adds the possibility to mount a rclone mount to plex directly
 It is recommended that fuse is installed on docker host.
+And also the mount will be forced to use --read-only
 Run example:
 ```
 docker run \
@@ -16,7 +17,8 @@ docker run \
 --device /dev/fuse \
 -e TZ="<timezone>" \
 -e PLEX_CLAIM="<claimToken>" \
--e RCLONE_CONFIG_MOUNT="<path we would like to mount from rclone config>" \
+-e RCLONE_MOUNT_CONFIG="<path we would like to mount from rclone config>" \
+-e RCLONE_MOUNT_ARGUMENTS="<rclone arguments>" \
 -v <path/to/plex/database>:/config \
 -v <path/to/transcode/temp>:/transcode \
 -p 32400:32400/tcp \

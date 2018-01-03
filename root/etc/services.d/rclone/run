@@ -9,4 +9,4 @@ else
   chown plex:plex "/media"
 fi
 
-exec s6-setuidgid plex /bin/sh -c '/usr/sbin/rclone --config /config/rclone.conf mount --allow-non-empty --poll-interval 1m --dir-cache-time 10m --acd-templink-threshold 0 --read-only '${RCLONE_CONFIG_MOUNT}' /media'
+exec s6-setuidgid plex /bin/sh -c '/usr/sbin/rclone --config /config/rclone.conf mount --read-only '${RCLONE_MOUNT_ARGUMENTS}' '${RCLONE_MOUNT_CONFIG}' /media'
