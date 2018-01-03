@@ -37,7 +37,7 @@ RUN \
     rm -f /tmp/rclone-v${RCLONE_VERSION}-linux-amd64.zip && \
 
 # Add user and groups
-    groupadd fuse && \
+    groupadd fuse -g 106 && \
     useradd -U -d /config -s /bin/false plex && \
     usermod -G users plex && \
     usermod -aG fuse plex && \
