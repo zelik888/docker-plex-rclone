@@ -1,17 +1,18 @@
 ## Forked from: https://github.com/plexinc/pms-docker
-
+----------
 # Information:
 More information can be found here: https://github.com/plexinc/pms-docker
 
 This fork adds the possibility to mount a rclone mount to plex directly.
 It is running rclone version 1.39 so it supports the new caching function.
-And also the mount will be forced to use --read-only
 
-# Recuirements
+----------
+# Requirements
 - Fuse must be installed on host
 
+----------
 # Run example:
-```
+```sh
 docker run \
 -d \
 --name plex \
