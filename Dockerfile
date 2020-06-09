@@ -1,4 +1,4 @@
-FROM pms-docker
+FROM plexinc/pms-docker:plexpass
 
 ENV RCLONE_VERSION="1.44"
 
