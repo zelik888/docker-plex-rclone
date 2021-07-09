@@ -1,6 +1,6 @@
 FROM plexinc/pms-docker:plexpass
 
-ENV RCLONE_VERSION="1.44"
+ENV RCLONE_VERSION="1.51.1"
 
 RUN \
 # Update and get dependencies
